@@ -20,20 +20,24 @@ app.get('/', (req, res) => {
 })
 
 //Show one database entry
-app.get('/:id', (req, res) => {
+app.get('/get/:id', (req, res) => {
     res.json({message: `Here is the database entry for id: ${req.params.id}`})
 })
 
 //Update one database entry
-app.patch('/update:id', (req, res) => {
-    
+app.patch('/update/:id', (req, res) => {
+    res.send({success: "true"});
 })
 //Delete one database entry 
 app.delete ('/delete:id', (req, res) => {
 
 })
 
+app.post('/', (req, res) => {
+    req.body
+    res.json({message: `Here is the database entry for id: ${req.body}`})
 
+});
 
 
 
